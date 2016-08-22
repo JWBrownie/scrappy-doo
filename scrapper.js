@@ -6,7 +6,7 @@ var app 	= express();
 
 app.get('/', function(req, res){
 	var url = 'http://www.doctoralia.com.mx/medicos';
-	var i = 1;
+	var $i = 1;
 
 	getLinks = function($i) {
 		request(url, function(error, response, html){
