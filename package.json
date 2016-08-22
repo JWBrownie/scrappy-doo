@@ -1,0 +1,12 @@
+{
+  "name"         : "scrappy-doo",
+  "version"      : "0.0.1",
+  "description"  : "Scrape the web.",
+  "main"         : "scrapper.js",
+  "author"       : "José Villalobos",
+  "dependencies" : {
+    "express"    : "latest",
+    "request"    : "latest",
+    "cheerio"    : "latest"
+  }
+}
