@@ -4,9 +4,7 @@ var request = require('request');
 var cheerio = require('cheerio');
 var app 	= express();
 
-
-
-app.get('/scrape', function(req, res){
+app.get('/', function(req, res){
 	var url = 'http://www.doctoralia.com.mx/medicos';
 	var i = 1;
 
@@ -16,6 +14,7 @@ app.get('/scrape', function(req, res){
 				var $ = cheerio.load(html);
 				
 				var uris = array();
+				var base = 'http://www.doctoralia.com'
 				var listing = $('.listing').children();
 
 				listing.each(function(i, el){
