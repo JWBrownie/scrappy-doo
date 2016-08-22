@@ -17,16 +17,20 @@ app.get('/', function(req, res){
 				var base = 'http://www.doctoralia.com'
 				var listing = $('.listing').children();
 
+				console.log('Processing the list');
 				listing.each(function(i, el){
+					console.log('iterating list item');
 					uris.push( base + $(el).find('article figure a').attr('href'));
 				});
+				console.log('Finished iterating the list');
 
 				fs.appendFile('dotors_uris.json', JSON.stringify(uris, null, 4), function(err){
 					if(err) {
 						console.log(err);
 					} else {
-						$i++;
 						if($i < 5) {
+							console.log('Done with this uri incrementing $i and recursing');
+							$i++;
 							getLinks($i);
 						}
 					}
